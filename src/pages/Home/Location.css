@@ -6,6 +6,7 @@
     background-position: center;
     display: flex;
     flex-direction: column;
+    gap: 50px;
 
 }
 .location header{
@@ -73,7 +74,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    height: 80%;
     margin-top: 20%;
 }
 .enconter img{
@@ -168,6 +169,6 @@
 
 @media (max-width: 768px) {
     .possibilities .list{
-        scale: 0.7;
+        scale: 0.6;
     }
 }
