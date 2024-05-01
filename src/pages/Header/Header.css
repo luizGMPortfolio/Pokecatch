@@ -96,7 +96,7 @@
 
 @media (max-width: 768px) {
     .catch, .main{
-        width: 60%;
+        width: 80%;
     }
     .header menu li{
         width: 60px;

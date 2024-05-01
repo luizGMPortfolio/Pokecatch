@@ -37,7 +37,7 @@
     flex-direction: column;
     font-family: "Inter", sans-serif;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 10px 0;text-align: center;
 }
 .ContagemLocation .text{
     font-size: 20px;
@@ -168,6 +168,6 @@
 
 @media (max-width: 768px) {
     .possibilities .list{
-        scale: 0.5;
+        scale: 0.7;
     }
 }
