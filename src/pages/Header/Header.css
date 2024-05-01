@@ -23,15 +23,14 @@
     padding: 0;
     transition: 200ms;
 }
-.catch{
-    width: 50%;
-}
+
 .main {
     background: linear-gradient(to right, #0d5ef4d8, #08358ecb);
 }
 
 
 .catchback {
+    width: 20%;
     margin-top: 100px;
     scale: 0.8;
 }
@@ -106,7 +105,12 @@
     .main {
         width: 80%;
     }
-
+    .catch{
+        width: 50%;
+    }
+    .catchback{
+        width: 20%;
+    }
     .header menu li {
         width: 60px;
     }
