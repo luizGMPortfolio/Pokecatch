@@ -32,8 +32,8 @@
 
 
 .catchback {
-    width: 10%;
-    transform: translatey(40px);
+    margin-top: 100px;
+    scale: 0.8;
 }
 
 .catch img {
@@ -130,7 +130,4 @@
         height: 350px;
     }
 
-    .catchback {
-        width: 10%;
-    }
 }
