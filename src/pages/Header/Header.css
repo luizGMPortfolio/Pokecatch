@@ -23,10 +23,12 @@
     transition: 200ms;
 }
 .main{
-    background: linear-gradient(to right, #0d5ef4d8, #08358ecb);
+    background: linear-gradient(to right, #0d5ef4d8, #08358ecb);]
+}
+.catch{
+    width: 20%;
 }
 .catchback{
-
     width: 15%;
     transform: translatey(40px);
 }
@@ -67,6 +69,7 @@
 }
 .pokeball{
     transition: 200ms;
+    
 }
 .cliked{
     transition: 200ms;
@@ -83,7 +86,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50px;
+    border-radius: 20%;
 }
 
 .active {
@@ -96,10 +99,23 @@
         width: 60%;
     }
     .header menu li{
-        width: 50px;
+        width: 60px;
     }
     .header .main img {
         width: 30px;
         height: 30px;
+    }
+    .catch img, .pokeball{
+        scale: 0.8;
+    }
+    .pokeballs{
+        scale: 0.8;
+        width: 100%;
+    }
+    .enconter{
+        height: 350px;
+    }
+    .catchback{
+        width: 10%;
     }
 }

@@ -12,11 +12,17 @@ const Locations = ({ location, setMenu }) => {
 
   return (
     <div className={`location ${location}`}>
-      <div className='possibilities'>
-        <div className='Contagem'>
+      <header>
+        <div className='ContagemLocation'>
           <span className='text'>Next update</span>
           <span className='time'>03:20:05</span>
         </div>
+        <div className='back'>
+          <Link to='/'><i class="fa-solid fa-arrow-turn-down fa-rotate-90"></i></Link>
+        </div>
+      </header>
+      <div className='possibilities'>
+
         <div className="list">
           <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png'></img>
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png" alt="" />
@@ -28,9 +34,6 @@ const Locations = ({ location, setMenu }) => {
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/310.png" alt="" />
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/544.png" alt="" />
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/464.png" alt="" />
-        </div>
-        <div className='back'>
-          <Link to='/'><i class="fa-solid fa-arrow-turn-down fa-rotate-90"></i></Link>
         </div>
       </div>
       <div className='enconter'>

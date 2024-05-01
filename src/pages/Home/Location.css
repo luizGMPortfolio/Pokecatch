@@ -1,21 +1,26 @@
 .location{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+}
+.location header{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
 }
 .possibilities{
     width: 100%;
-    height: 20%;
     display: flex;
     justify-content:center;
     align-items: center;
-    gap: 20%;
+    flex-wrap: wrap;
+    padding: 20px 0;
 }
 .possibilities .list{
     display: flex;
@@ -23,15 +28,24 @@
     align-items: center;
     background-color: #0000006e;
     border-radius: 70px;
-    padding: 0 10px;
+    padding: 10px;
+    margin: 0 5px;
 }
-.possibilities .Contagem{
-    width: 15%;
+.ContagemLocation{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    margin: 10px 0;
 }
-.possibilities .Contagem .time, .possibilities .Contagem .text{
-    margin: 0;
-    font-size: 30px;
+.ContagemLocation .text{
+    font-size: 20px;
 }
+.ContagemLocation .time{
+    font-size: 40px;
+}
+
 .possibilities img{
     width: 50px;
     height: 50px;
@@ -42,9 +56,10 @@
     transform: translatey(-10px);
 }
 .back{
-    width: 10%;
+    width: 30%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .back a{
  color: #000000;
@@ -56,10 +71,10 @@
     color: #fff;
 }
 .enconter{
-    height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 500px;
 }
 .enconter img{
     margin-top: 10px;
@@ -148,4 +163,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; 
+}
+
+
+@media (max-width: 768px) {
+    .possibilities .list{
+        scale: 0.5;
+    }
 }
