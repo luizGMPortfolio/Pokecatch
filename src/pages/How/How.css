@@ -76,6 +76,8 @@
     font-style: normal;
     font-size: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
 }
 .choises li{
     background-color: #24242450;

@@ -21,6 +21,11 @@ import items from '../../assets/Icones/items.png'
 const Header = ({ menu, setMenu }) => {
 
     const [Catchmenu, setCatchmenu] = useState('')
+    useEffect(() => {
+        if (menu != 'location'){
+            setCatchmenu('')
+        }
+      }, [menu]);
 
 
     return (

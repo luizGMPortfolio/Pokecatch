@@ -1,6 +1,6 @@
 import './Pokedex.css'
 import React, { useRef, useState, useEffect } from 'react';
-
+import axios from 'axios';
 
 function pokedex({ setMenu }) {
 
@@ -10,16 +10,50 @@ function pokedex({ setMenu }) {
   const [Region, setRegion] = useState('Region');
   const [aba, setAba] = useState('seus');
 
+
+  const [pokemons, setPokemons] = useState([]);
+
+
   useEffect(() => {
     setMenu('Pokedex')
   }, []);
 
+  useEffect(() => {
+
+    const fetchFilter = async () => {
+      try {
+        // Fazendo a requisição para a API e armazenando a resposta
+        var info = [];
+        for (let j = 1; j <= 1025; j++) {
+
+          const response = await axios.get("https://pokeapi.co/api/v2/pokemon/" + (j + pokemons.length) + "/");
+          if (type === 'type') {
+            info.push(response.data);
+          }
+          else {
+            response.data.types.map(ty => {
+              if (type === ty.type.name) {
+                info.push(response.data);
+              }
+            });
+          }
+        }
+
+        setPokemons([...pokemons, ...info]);
+      } catch (error) {
+        setError(error); // Armazena qualquer erro que ocorra
+      }
+    }
+
+
+    fetchFilter();
+  }, []);
 
   return (
     <div className='pokedex'>
       <div className='filters'>
         <div className='Search'>
-          <input type="text" placeholder='Search'/>
+          <input type="text" placeholder='Search' />
         </div>
 
         <div className='filter'>
@@ -79,19 +113,40 @@ function pokedex({ setMenu }) {
 
           </div>
         </div>
-        <div></div>
-        <div></div>
       </div>
       <div className='list'>
         <div className='abas'>
-          <div className={`seus ${aba === 'seus'? 'activeAba':''}`} onClick={() => setAba('seus')}>
+          <div className={`seus ${aba === 'seus' ? 'activeAba' : ''}`} onClick={() => setAba('seus')}>
             <h2>Seus Pokemons</h2>
           </div>
-          <div className={`all ${aba === 'all'? 'activeAba':''}`} onClick={() => setAba('all')}>
+          <div className={`all ${aba === 'all' ? 'activeAba' : ''}`} onClick={() => setAba('all')}>
             <h2>Todos</h2>
           </div>
         </div>
-        <div className='cards'></div>
+        <div className='cards'>
+          {pokemons && pokemons.map((pokemon) => (
+            <div className='card'>
+              <div className='name'>
+                <h3 style={{fontSize:`${pokemon.name.length > 12 ? '11px' : '15px'}`}}>{pokemon.name}</h3>
+              </div>
+              <div className='img'>
+                <img src={pokemon.sprites.other["official-artwork"].front_default} alt="" />
+              </div>
+              <div className='types'>
+                {pokemon.types.map(type => (
+                  <div className={`type1 ${type.type.name}`}>
+                    <span>{type.type.name}</span>
+                  </div>
+                ))}
+              </div>
+              <div className='num'>
+                <span>N°{pokemon.id}</span>
+              </div>
+            </div>
+
+
+          ))}
+        </div>
       </div>
     </div>
   )

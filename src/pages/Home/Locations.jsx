@@ -37,7 +37,7 @@ const Locations = ({ location, setMenu }) => {
         </div>
       </div>
       <div className='enconter'>
-        <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/565.png'></img>
+        <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png'></img>
       </div>
 
     </div>

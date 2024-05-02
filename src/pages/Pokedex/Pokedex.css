@@ -1,29 +1,27 @@
 .pokedex {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: url('../../assets/Backgrounds/Pokedex.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     font-family: "Kanit", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
-
 .filters {
-    height: 20%;
-
+    height: 150px;
 }
-
 .list {
     height: 80%;
 }
-
 .abas {
     width: 100%;
     height: 10%;
     display: flex;
     color: #2b2b2b;
 }
-
 .seus,
 .all {
     width: 50%;
@@ -39,10 +37,6 @@
     cursor: inherit;
 }
 
-.cards {
-    background-color: #ffffff69;
-    height: 90%;
-}
 
 .Search {
     height: 50%;
@@ -73,6 +67,7 @@
     gap: 20px;
 }
 .select{
+    padding: 0 20px;
     height: 100%;
     border-radius: 15px;
     color: #fff;
@@ -80,7 +75,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 1px;
     cursor: pointer;
   }
@@ -88,7 +83,6 @@
 .f-types,
 .f-Region,
 .f-generations {
-    width: 150px;
     height: 30px;
 
 }
@@ -106,14 +100,13 @@
     gap: 3px;
     background-color: #ffffff69;
     border-radius: 10px;
-    padding: 5px 0;
 }
 .options li{
     width: 90%;
     height: 25px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -208,4 +201,129 @@
 .Region {
     background-color: #ffffff69;
     color: #2b2b2b;
+}
+
+
+
+@media (max-width: 768px) {
+    .Search input{
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cards{
+    padding: 20px 0;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    background-color: #ffffff69;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 184px;
+    height: 284px;
+    perspective: 1000px;
+    background-color: #49a9d6;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 2px 6px 18px 0px #393a3a;
+    border: 4px solid #707070;
+    transition: 200ms;
+}
+.card img{
+    width: 100%;
+    height: 100%;
+}
+  
+.card:hover{
+    transform:translateY(-20px);
+  }
+
+
+
+  .type1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    width: 43%;
+    padding: 1px 0;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid #706c6c;
+  }
+  .num{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #dadada;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+  }
+  .pokedex h3{
+    font-size: 15px;
+    margin: 0;
+    padding: 5px 0;
+    width: 90%;
+    background-color: #1c1c1c;
+    font-family: "Slackey", sans-serif;
+    font-style: normal;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+
+.name{
+    width: 100%;
+    display: flex;
+    height: 15%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.img{
+    width: 100%;
+    display: flex;
+    height: 60%;
+}
+.types{
+    width: 100%;
+    display: flex;
+    height: 15%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #454545;
+    gap: 5px;
+}
+.num{
+    width: 100%;
+    display: flex;
+    height: 10%;
+    background-color: #454545;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
