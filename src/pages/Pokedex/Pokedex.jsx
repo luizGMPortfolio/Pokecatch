@@ -24,7 +24,7 @@ function pokedex({ setMenu }) {
       try {
         // Fazendo a requisição para a API e armazenando a resposta
         var info = [];
-        for (let j = 1; j <= 1025; j++) {
+        for (let j = 1; j <= 30; j++) {
 
           const response = await axios.get("https://pokeapi.co/api/v2/pokemon/" + (j + pokemons.length) + "/");
           if (type === 'type') {
