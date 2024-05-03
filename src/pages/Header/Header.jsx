@@ -43,7 +43,7 @@ const Header = ({ menu, setMenu }) => {
                     <li onClick={() => setCatchmenu(Catchmenu === 'pokebolas' ? '':'pokebolas')} className={`pokeball ${Catchmenu === 'pokebolas'? 'cliked': ''}`}>
                         <img src={pokebola} alt="" />
                     </li>
-                    <li onClick={() => setCatchmenu(Catchmenu === 'cards' ? '':'cards')} className={`card ${Catchmenu === 'cards'? 'cliked': ''}`}>
+                    <li onClick={() => setCatchmenu(Catchmenu === '' ? '':'')} className={` ${Catchmenu === 'cards'? 'cliked': ''}`}>
                         <img src={cards} alt="" />
                     </li>
                     <li>

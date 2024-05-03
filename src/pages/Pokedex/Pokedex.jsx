@@ -1,6 +1,7 @@
 import './Pokedex.css'
 import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
+import Card from '../../components/card';
 
 function pokedex({ setMenu }) {
 
@@ -12,6 +13,7 @@ function pokedex({ setMenu }) {
 
 
   const [pokemons, setPokemons] = useState([]);
+  const [loading, setLoading] = useState(true);
 
 
   useEffect(() => {
@@ -40,6 +42,7 @@ function pokedex({ setMenu }) {
         }
 
         setPokemons([...pokemons, ...info]);
+        setLoading(false)
       } catch (error) {
         setError(error); // Armazena qualquer erro que ocorra
       }
@@ -125,27 +128,30 @@ function pokedex({ setMenu }) {
         </div>
         <div className='cards'>
           {pokemons && pokemons.map((pokemon) => (
-            <div className='card'>
-              <div className='name'>
-                <h3 style={{fontSize:`${pokemon.name.length > 12 ? '11px' : '15px'}`}}>{pokemon.name}</h3>
-              </div>
-              <div className='img'>
-                <img src={pokemon.sprites.other["official-artwork"].front_default} alt="" />
-              </div>
-              <div className='types'>
-                {pokemon.types.map(type => (
-                  <div className={`type1 ${type.type.name}`}>
-                    <span>{type.type.name}</span>
-                  </div>
-                ))}
-              </div>
-              <div className='num'>
-                <span>N°{pokemon.id}</span>
-              </div>
+            <Card
+              name={pokemon.name}
+              img={pokemon.sprites.other["official-artwork"].front_default}
+              types={pokemon.types}
+              num={pokemon.id}
+            />
+          ))}
+          {loading &&
+            <div className='loading'>
+              <Card Style={'Back'}/>
+              <Card Style={'Back'}/>
+              <Card Style={'Back'}/>
+              <Card Style={'Back'}/>
+              <Card Style={'Back'}/>
+              <Card Style={'Back'}/>
+              <Card Style={'Back'}/>
+              <Card Style={'Back'}/>
+              <Card Style={'Back'}/>
+              <Card Style={'Back'}/>
+              <Card Style={'Back'}/>
+              <Card Style={'Back'}/>
             </div>
 
-
-          ))}
+          }
         </div>
       </div>
     </div>
@@ -153,3 +159,6 @@ function pokedex({ setMenu }) {
 }
 
 export default pokedex
+
+
+
