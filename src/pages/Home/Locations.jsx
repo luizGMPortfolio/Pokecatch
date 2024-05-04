@@ -18,7 +18,7 @@ const Locations = ({ location, setMenu }) => {
           <span className='time'>03:20:05</span>
         </div>
         <div className='back'>
-          <Link to='/'><i class="fa-solid fa-arrow-turn-down fa-rotate-90"></i></Link>
+          <Link to='/Home'><i class="fa-solid fa-arrow-turn-down fa-rotate-90"></i></Link>
         </div>
       </header>
       <div className='possibilities'>

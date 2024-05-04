@@ -1,5 +1,5 @@
 import './Home.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 
 import pinheiro from '../../assets/Icones/pinheiro.png'
@@ -10,11 +10,15 @@ import cacto from '../../assets/Icones/cacto.png'
 import vulção from '../../assets/Icones/vulção.png'
 import Hanted from '../../assets/Icones/Hanted.png'
 
+import Time from '../../Hooks/Time';
+
+
 const Home = ({ setMenu, Change_location }) => {
 
 
   useEffect(() => {
     setMenu('Home');
+
   }, []);
 
 
@@ -22,7 +26,7 @@ const Home = ({ setMenu, Change_location }) => {
     <div className='Home'>
       <div className='Contagem'>
         <span className='text'>Next update</span>
-        <span className='time'>03:20:05</span>
+        <Time />
       </div>
       <div className='Locais'>
         <ul>

@@ -52,7 +52,6 @@
     border: none;
     background-color: #ffffff69;
     padding-left: 20px;
-    font-family: "Kanit", sans-serif;
     font-weight: bold;
 }
 .Search input::placeholder{

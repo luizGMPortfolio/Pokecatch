@@ -27,7 +27,7 @@ function AnimateRoutes({setMenu}) {
     return (
 
         <Routes>
-            <Route path='/' exact element={<Home Change_page={Change_page} setMenu={setMenu} Change_location={Change_location}/>} />
+            <Route path='/' exact element={<Login setMenu={setMenu}/>} />
             <Route path='/Home' exact element={<Home change_page={change_page} setMenu={setMenu} Change_location={Change_location}/>} />
             <Route path='/How' exact element={<How Change_page={Change_page} setMenu={setMenu}/>} />
             <Route path='/Pokedex' exact element={<Pokedex Change_page={Change_page} setMenu={setMenu}/>} />

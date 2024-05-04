@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 function App() {
 
-  const [menu, setMenu] = useState('Home');
+  const [menu, setMenu] = useState('');
   return (
     <div className='App'>
       <Router>

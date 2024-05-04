@@ -1,0 +1,65 @@
+.autentication{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #505050;
+    font-family: inherit;
+}
+.login, .cadastro{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.login-img{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-img img{
+    width: 200px;
+    height: 200px;
+}
+.login-inputs{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.login-inputs input{
+    width: 50%;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 5px;
+    font-family: inherit;
+}
+.login-buttom{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-buttom button{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #292929;
+    color: #fff;
+    font-family: inherit;
+}
+
+.login-change{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

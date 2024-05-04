@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    font-family: inherit;
 }
 
 .Contagem{
@@ -29,6 +30,9 @@
 }
 .time{
     font-size: 65px;
+}
+.time p{
+    margin: 0;
 }
 .Locais{
     width: 100%;
