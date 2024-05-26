@@ -45,13 +45,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.cardHow img{
-    width: 220px;
-    height: 320px;
     animation: float 3s ease-in-out infinite;
-
 }
+
 @keyframes float {
     0%, 100% {
         transform: translateY(0);

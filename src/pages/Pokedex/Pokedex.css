@@ -1,7 +1,10 @@
 .pokedex {
     width: 100%;
     min-height: 100vh;
-    background-color: #097200;
+    background: url('../../assets/Backgrounds/SL-090119-22970-01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

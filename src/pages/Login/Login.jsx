@@ -1,68 +1,87 @@
-
-
-
-
+//css
 import './Login.css'
-import React, { useRef, useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+
+//imports
 import logo from '../../assets/Icones/LogoPokecatch.png'
 
-const Login = ({ setMenu }) => {
+//hooks
+import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useAuthentication } from '../../hooks/useAuthentication';
 
-  const [change, setChange] = useState('cadastro');
+const Login = () => {
 
-  useEffect(() => {
-    setMenu('')
-  }, []);
+    const [email, setemail] = useState('');
+    const [password, setpassword] = useState('');
+    const [error, setError] = useState('');
 
-  return (
-    <div className='autentication'>
-      {change === 'loading' &&
-        <div className='loading'>
-          <img src={logo} alt="" />
+    const { login, error: authError, loading } = useAuthentication();
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        setError("");
+
+        const user = {
+            email,
+            password,
+        }
+
+        const res = await login(user)
+        console.log(res);
+
+    };
+
+    useEffect(() => {
+        if (authError) {
+            setError(authError)
+        }
+
+    }, [authError])
+
+
+    return (
+        <div className='Login'>
+            <div className='logo'>
+                <img src={logo} alt="" />
+            </div>
+            <div className='inputs'>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        E-mail
+                        <input
+                            type="email"
+                            name='email'
+                            required
+                            placeholder='E-mail'
+                            onChange={(e) => setemail(e.target.value)} />
+                    </label>
+                    <label>
+                        Senha
+                        <input
+                            type="password"
+                            name='password'
+                            required
+                            placeholder='senha'
+                            onChange={(e) => setpassword(e.target.value)} />
+                    </label>
+                    {!loading &&
+                        <button className='btn'>Login</button>
+                    }
+                    {loading &&
+                        <button className='btn' disabled>Aguarde...</button>
+                    }
+                    {error && <p className='error'>{error}</p>}
+                </form>
+                <div className='register'>
+                    <Link to='/register'>Cadastrar-se</Link>
+                </div>
+                {error && <p className='error'>{error}</p>}
+            </div>
+
         </div>
-      }
-      {change === 'cadastro' &&
-        <div className='cadastro'>
-          <div className='login-img'>
-            <img src={logo} alt="" />
-          </div>
-          <div className='login-inputs'>
-            <input type="text" placeholder='Usuario' />
-            <input type="text" placeholder='Senha' />
-          </div>
-          <div className='login-buttom'>
-            <Link to='/Home'><button>Cadastrar</button></Link>
-          </div>
-          <div className='login-change'>
-            <span onClick={() => setChange('login')}>Login</span>
-          </div>
-        </div>
-      }
-      {change === 'login' &&
-        <div className='login'>
-          <div className='login-img'>
-            <img src={logo} alt="" />
-          </div>
-          <div className='login-inputs'>
-            <input type="text" placeholder='Usuario' />
-            <input type="text" placeholder='Senha' />
-          </div>
-          <div className='login-buttom'>
-            <Link to='/Home'><button>Login</button></Link>
-          </div>
-          <div className='login-change'>
-            <span onClick={() => setChange('cadastro')}>Cadastrar</span>
-          </div>
-        </div>
-
-      }
-
-    </div>
-
-
-
-  )
+    )
 }
 
 export default Login
